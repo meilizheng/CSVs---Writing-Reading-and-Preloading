@@ -6,7 +6,30 @@
         xmlns:local="clr-namespace:CSVs___Writing_Reading_and_Preloading"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Canvas x:Name="btnSaveToCsv" Background="#FF205B4C">
+        <ListView x:Name="lvStudents" HorizontalAlignment="Left" Height="335" VerticalAlignment="Top" Width="450" d:ItemsSource="{d:SampleData ItemCount=5}" Canvas.Left="300" Canvas.Top="50" Background="#FFD2DAD2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="CSI Grade" DisplayMemberBinding="{Binding CsiGrade}"/>
+                    <GridViewColumn Header="Gen Ed Grade" DisplayMemberBinding="{Binding GenEdGrade}"/>
+                    <GridViewColumn Header="Average" DisplayMemberBinding="{Binding Average}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Save To List" Canvas.Left="25" Canvas.Top="350" Height="35" Width="140" Click="Button_Click" Background="#FFCABDBD"/>
+        <Label x:Name="lbFistName" Content="First Name" Height="30" Canvas.Left="35" Canvas.Top="42" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtFirstName" Height="25" Canvas.Left="35" TextWrapping="Wrap" Canvas.Top="77" Width="130" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFBBB4B4"/>
+        <Label x:Name="lbLastName" Content="Last Name" Height="30" Canvas.Left="35" Canvas.Top="109" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtLastName" Height="25" Canvas.Left="35" TextWrapping="Wrap" Canvas.Top="144" Width="130" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFCCBDBD"/>
+        <TextBox x:Name="txtCSI" Height="25" Canvas.Left="35" TextWrapping="Wrap" Canvas.Top="209" Width="130" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFBFB9B9"/>
+        <Label x:Name="lbCSI" Content="CSI Grade" Height="30" Canvas.Left="35" Canvas.Top="174" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label x:Name="lbGenEn" Content="GenEnGrade" Height="30" Canvas.Left="35" Canvas.Top="234" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtGenEn" Height="25" Canvas.Left="35" TextWrapping="Wrap" Canvas.Top="264" Width="130" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFBFB5B5"/>
+        <Button Content="Save To CSV" Height="34" Canvas.Left="25" Canvas.Top="304" Width="140" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_1" Background="#FFC8BEBE"/>
+        <Label x:Name="lbStudentID" Content="Student ID" Height="27" Canvas.Left="35" Canvas.Top="10" Width="85"/>
+        <TextBox x:Name="txtStudentId" Height="33" Canvas.Left="180" TextWrapping="Wrap" Canvas.Top="10" Width="95" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
-    </Grid>
+    </Canvas>
 </Window>
